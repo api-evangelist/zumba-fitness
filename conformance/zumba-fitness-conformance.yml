@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.zumba.com/.well-known/openid-configuration (live)
+standards:
+- id: oauth2
+  name: OAuth 2.0 Authorization Framework (RFC 6749)
+  conforms: true
+  evidence: Published authorization_endpoint + token_endpoint with authorization_code and refresh_token grants at https://www.zumba.com/.well-known/openid-configuration
+- id: oidc
+  name: OpenID Connect Core 1.0
+  conforms: true
+  evidence: OpenID provider metadata document served at /.well-known/openid-configuration with issuer, userinfo_endpoint, jwks_uri, and RS256 id_token signing.
+- id: oauth2-pkce
+  name: PKCE for OAuth 2.0 Public Clients (RFC 7636)
+  conforms: true
+  evidence: code_challenge_methods_supported advertises S256.
+- id: jwks
+  name: JSON Web Key Set (RFC 7517)
+  conforms: true
+  evidence: /.well-known/jwks.json returns 200 with two RS256 RSA signing keys.
+- id: security-txt
+  name: security.txt (RFC 9116)
+  conforms: true
+  evidence: /.well-known/security.txt returns 200 with Contact and Expires fields.

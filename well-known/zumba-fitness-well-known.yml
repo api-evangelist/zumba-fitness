@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of https://www.zumba.com/.well-known/*
+host: www.zumba.com
+entries:
+- path: /.well-known/security.txt
+  status: 200
+  type: SecurityTxt
+  file: zumba-fitness-security.txt
+- path: /.well-known/openid-configuration
+  status: 200
+  type: WellKnown
+  file: zumba-fitness-openid-configuration.json
+  note: OpenID Connect / OAuth 2.0 authorization server metadata (issuer https://www.zumba.com)
+- path: /.well-known/jwks.json
+  status: 200
+  type: WellKnown
+  file: zumba-fitness-jwks.json
+  note: JSON Web Key Set (2 RS256 signing keys)
+- path: /.well-known/oauth-authorization-server
+  status: 302
+  type: WellKnown
+  file: null
+- path: /.well-known/api-catalog
+  status: 302
+  type: WellKnown
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 302
+  type: WellKnown
+  file: null

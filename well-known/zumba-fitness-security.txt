@@ -1,0 +1,4 @@
+Canonical: https://www.zumba.com/.well-known/security.txt
+Contact: mailto:security@zumba.com
+Contact: tel:+1-954-256-1642
+Expires: 2030-03-11T23:59:59Z

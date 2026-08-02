@@ -1,4 +1,17 @@
 aid: zumba-fitness
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zumba-fitness.png
 name: Zumba Fitness
 description: Zumba Fitness is a company surfaced as a portfolio company of insight-partners and added
   to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
@@ -22,5 +35,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: VulnerabilityDisclosure
+  url: security/zumba-fitness-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/zumba-fitness-domain-security.yml
 - type: Website
   url: http://www.zumba.com/
