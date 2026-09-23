@@ -2,30 +2,34 @@ generated: '2026-07-21'
 method: searched
 source: live probes of https://www.zumba.com/.well-known/*
 host: www.zumba.com
-entries:
-- path: /.well-known/security.txt
-  status: 200
-  type: SecurityTxt
-  file: zumba-fitness-security.txt
-- path: /.well-known/openid-configuration
-  status: 200
-  type: WellKnown
-  file: zumba-fitness-openid-configuration.json
-  note: OpenID Connect / OAuth 2.0 authorization server metadata (issuer https://www.zumba.com)
-- path: /.well-known/jwks.json
-  status: 200
-  type: WellKnown
-  file: zumba-fitness-jwks.json
-  note: JSON Web Key Set (2 RS256 signing keys)
-- path: /.well-known/oauth-authorization-server
-  status: 302
-  type: WellKnown
-  file: null
-- path: /.well-known/api-catalog
-  status: 302
-  type: WellKnown
-  file: null
-- path: /.well-known/ai-plugin.json
-  status: 302
-  type: WellKnown
-  file: null
+hosts:
+- host: www.zumba.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: zumba-fitness-security.txt
+    type: SecurityTxt
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: zumba-fitness-openid-configuration.json
+    type: WellKnown
+    note: OpenID Connect / OAuth 2.0 authorization server metadata (issuer https://www.zumba.com)
+  - path: /.well-known/jwks.json
+    status: 200
+    file: zumba-fitness-jwks.json
+    type: WellKnown
+    note: JSON Web Key Set (2 RS256 signing keys)
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+    type: WellKnown
+  - path: /.well-known/api-catalog
+    status: 302
+    type: WellKnown
+  - path: /.well-known/ai-plugin.json
+    status: 302
+    type: WellKnown
+x-shape-fix:
+  converted: '2026-08-20'
+  from: entries
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
